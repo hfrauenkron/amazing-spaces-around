@@ -3,9 +3,18 @@ import React from "react";
 function Filter() {
   return (
     <section className="filterList">
-      <button className="filter">Filter 1</button>
-      <button className="filter">Filter 2</button>
-      <button className="filter">Filter 3</button>
+      <button className="filter">
+        <span>OPEN</span>
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <button className="filter">
+        <span>DISTANCE</span>
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <button className="filter">
+        <span>PRICE</span>
+        <i class="fa fa-caret-down"></i>
+      </button>
     </section>
   );
 }
