@@ -58,9 +58,18 @@
   flex-direction: row;
   background: beige;
   height: 200px;
-  width: 80%;
+  width: 400px;
   margin: 20px;
   border: 2px solid black;
+}
+
+.placeText {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50%;
+  justify-content: flex-start;
+  text-align: center;
 }
 
 .image {
@@ -69,6 +78,7 @@
   background: white;
   height: 100%;
   width: 50%;
+  padding: 5px;
 }
 
 /* @keyframes App-logo-spin {

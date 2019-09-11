@@ -3,9 +3,9 @@ import React from "react";
 function Header() {
   return (
     <header className="header">
-      <h1>
-        around <b>(spaces)</b>
-      </h1>
+      <h2>
+        special places.around <b>(spaces)</b>
+      </h2>
     </header>
   );
 }
