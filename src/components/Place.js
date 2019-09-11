@@ -5,8 +5,8 @@ function Place() {
     <section className="placeList">
       <div className="place">
         <img
-          src="https://www.dieaugenweide.ch/wp-content/uploads/2018/10/Kolumba-Zumthor-Koeln-2sns.jpg"
           className="image"
+          src="https://www.dieaugenweide.ch/wp-content/uploads/2018/10/Kolumba-Zumthor-Koeln-2sns.jpg"
         ></img>
         <div className="placeText">
           <h3>Kolumba Museum</h3>
@@ -25,8 +25,8 @@ function Place() {
       </div>
       <div className="place">
         <img
-          src="https://www.rhein-magazin-duesseldorf.de/wp-content/uploads/rheinboulevard.jpg"
           className="image"
+          src="https://www.rhein-magazin-duesseldorf.de/wp-content/uploads/rheinboulevard.jpg"
         ></img>
         <div className="placeText">
           <h3>Rheinpromenade</h3>
@@ -34,9 +34,12 @@ function Place() {
         </div>
       </div>
       <div className="place">
-        <div className="image"></div>
+        <img
+          className="image"
+          src="https://www.schokoladenmuseum.de/assets/images/1/Schokoladenmuseum_aussen_2017_Presse_3-6993973f.jpg"
+        ></img>
         <div className="placeText">
-          <h3>Place 4 headline</h3>
+          <h3>Schokoladenmuseum</h3>
           <p>Place description</p>
         </div>
       </div>
