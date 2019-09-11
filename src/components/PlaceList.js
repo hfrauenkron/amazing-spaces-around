@@ -3,10 +3,9 @@ import Place from "./Place";
 
 function PlaceList() {
   return (
-    <div>
-      PlaceList
+    <section className="placeList">
       <Place />
-    </div>
+    </section>
   );
 }
 
