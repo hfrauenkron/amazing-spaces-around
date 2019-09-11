@@ -3,10 +3,9 @@ import Filter from "./Filter";
 
 function FilterList() {
   return (
-    <div>
-      FilterList
+    <section className="filterList">
       <Filter />
-    </div>
+    </section>
   );
 }
 

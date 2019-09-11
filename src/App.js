@@ -6,13 +6,15 @@ import PlaceList from "./components/PlaceList";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <FilterList />
-        <PlaceList />
-      </main>
-    </div>
+    <body className="app">
+      <div className="wrapper">
+        <Header />
+        <main className="main">
+          <FilterList />
+          <PlaceList />
+        </main>
+      </div>
+    </body>
   );
 }
 
