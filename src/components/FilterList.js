@@ -1,10 +1,13 @@
 import React from "react";
 import Filter from "./Filter";
+import { filters } from "../api/filters";
 
 function FilterList() {
   return (
     <section className="filterList">
-      <Filter />
+      {filters.map(filter => {
+        return <Filter key={filter.name} filter={filter} />;
+      })}
     </section>
   );
 }
