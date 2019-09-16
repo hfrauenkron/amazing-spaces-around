@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
   return (
     <header className="header">
-      <h2>amazing (spaces) around</h2>
+      <h2>amazing SPACES around</h2>
     </header>
   );
 }

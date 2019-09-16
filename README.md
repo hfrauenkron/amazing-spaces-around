@@ -1,6 +1,6 @@
-# around-spaces
+# amazing SPACES around
 
-Finds the most interesting spots around Spaces!
+Let's you find the most amazing and inspiring cultural spots around SPACES Offices in Cologne!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
