@@ -5,12 +5,26 @@ import FilterList from "./components/FilterList";
 import PlaceList from "./components/PlaceList";
 
 function App() {
+  function handleFilterChange(name, value) {
+    console.log(name, value);
+    console.log(`${name}: ${value}`);
+  }
+
+  //const [filters, setFilters] = React.useState([]);
+
+  /*function handleFilterChange(filterName, filterValue) {
+    const newFilters = Object.assign({}, filters);
+    newsFilters[filterName] = filterValue;
+    // setFilter(event.target.value);
+  
+  }
+  */
   return (
     <body className="app">
       <div className="wrapper">
         <Header />
         <main className="main">
-          <FilterList />
+          <FilterList onFilterChange={handleFilterChange} />
           <PlaceList />
         </main>
       </div>
@@ -19,3 +33,5 @@ function App() {
 }
 
 export default App;
+
+//           <FilterList onFilterChange={handleFilterChange} />

@@ -19,9 +19,12 @@
 }
 
 .header {
+  z-index: 1;
+  position: relative;
   background: peachpuff;
   height: 80px;
   width: 100%;
+  box-shadow: 0 2px 5px 0 rgb(129, 110, 94);
 }
 
 .main {
@@ -35,13 +38,14 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 70px;
 }
 
 .filter {
   display: flex;
   justify-content: space-between;
   height: 30px;
-  width: 100px;
+  width: 150px;
   border: 2px solid black;
   margin: 10px;
 }
@@ -53,6 +57,7 @@
   background: rgb(175, 206, 181);
   height: 100%;
   overflow: scroll;
+  box-shadow: 0 -2px 5px 0 rgb(118, 138, 123);
 }
 
 .place {
@@ -61,7 +66,8 @@
   background: beige;
   height: 200px;
   width: 420px;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-right: 10px;
   border: 2px solid black;
 }
 
@@ -71,7 +77,13 @@
   flex-wrap: wrap;
   width: 50%;
   justify-content: flex-start;
-  text-align: center;
+  padding: 5px;
+}
+
+.placeFilters {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .image {

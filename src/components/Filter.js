@@ -1,24 +1,33 @@
 import React from "react";
+// import { filters } from "../api/filters";
 
-function Filter() {
+function Filter(props) {
+  // const [filter, setFilter] = React.useState(null);
+
+  // function handleChange(event) {
+  //   props.onChange(props.filter.name, event.target.value);
+  // }
   return (
-    <section className="filterList">
-      <button className="filter">
-        <span>OPEN</span>
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <button className="filter">
-        <span>DISTANCE</span>
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <button className="filter">
-        <span>PRICE</span>
-        <i class="fa fa-caret-down"></i>
-      </button>
-    </section>
+    <select
+      className="filter"
+      onChange={event => props.onChange(props.filter.name, event.target.value)}
+    >
+      <option defaultValue>{props.filter.name}</option>
+      {props.filter.options.map(option => {
+        return <option key={option}>{option}</option>;
+      })}
+    </select>
   );
 }
 
 export default Filter;
 
-// <button className="filter">Filter</button>
+// <i class="fa fa-caret-down"></i>
+/*
+      <optgroup label={props.filter.name}>
+        <option>
+                </option>
+      </optgroup>
+
+            <option disabled value={props.filter.name}></option>
+      */
