@@ -13,9 +13,9 @@ function Place(props) {
           <h3>{props.place.title}</h3>
           <p>{props.place.description}</p>
           <div className="placeFilters">
-            <span>{props.place.category}</span>
-            <span>{props.place.price}</span>
-            <span>{props.place.distance}min</span>
+            <span>Category:{props.place.category}</span>
+            <span>Price:{props.place.price}</span>
+            <span>Distance:{props.place.distance}min</span>
           </div>
         </div>
       </div>
