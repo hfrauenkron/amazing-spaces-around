@@ -21,9 +21,10 @@
 .header {
   z-index: 1;
   position: relative;
-  background: rgb(235, 222, 247);
+  background: rgb(240, 232, 248);
   height: 80px;
   width: 100%;
+  border: 5px solid rgb(218, 204, 233);
   box-shadow: 0 2px 5px 0 rgb(165, 165, 167);
   text-shadow: 2px 2px 2px white;
   /* text-shadow: 3px 3px 3px white; */
@@ -48,7 +49,7 @@
   justify-content: space-between;
   height: 30px;
   width: 150px;
-  border: 2px solid black;
+  border: 5px solid rgb(224, 224, 183);
   margin: 10px;
 }
 
@@ -56,6 +57,7 @@
   display: flex;
   justify-content: center;
   flex-flow: wrap;
+  border: 5px solid rgb(216, 195, 176);
   padding: 10px;
   background: rgb(245, 225, 208);
   height: 100%;
@@ -64,13 +66,15 @@
 }
 
 .place {
+  z-index: 1;
+  position: relative;
   display: flex;
   flex-direction: row;
   background: beige;
   height: 250px;
   width: 420px;
   margin: 10px;
-  border: 2px solid black;
+  border: 5px solid rgb(216, 195, 176);
 }
 
 .placeText {
@@ -89,6 +93,8 @@
 }
 
 .image {
+  z-index: 0;
+  position: relative;
   display: flex;
   justify-content: center;
   background: white;

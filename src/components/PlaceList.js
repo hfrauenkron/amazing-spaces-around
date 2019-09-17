@@ -2,67 +2,58 @@ import React from "react";
 import Place from "./Place";
 import { places } from "../api/places.js";
 
-// if (props.selectedFilter.title === "Distance") {
-//   let numbers = props.selectedFilter.value.match(/\d+/g).map(Number);
-//   return restaurant.distance <= numbers;
-
-function PlaceList({ selectedFilter }) {
-  console.log(selectedFilter);
-  // const filterByKeys = Object.keys(props.filter);
+function PlaceList({ selectedFilters }) {
+  console.log(selectedFilters);
   const filteredPlaces = places.filter(place => {
-    if (!selectedFilter) {
-      return true;
+    let keepPlace = true;
+    if (selectedFilters.distance) {
+      switch (selectedFilters.distance) {
+        case "< 5min":
+          keepPlace = place.distance <= 5;
+          break;
+        case "< 10min":
+          keepPlace = place.distance <= 10;
+          break;
+        case "< 20min":
+          keepPlace = place.distance <= 20;
+          break;
+        default:
+          break;
+      }
     }
-    if (selectedFilter.name === "distance") {
-      let numbers = selectedFilter.value.match(/\d+/g).map(Number);
-      return place.distance <= numbers;
-      // switch (selectedFilter.value) {
-      //   case "< 10min":
-      //     return place.distance <= 10;
-      //   case "< 20min":
-      //     return place.distance > 10;
-      //   default:
-      //     break;
-      // }
-      // return place.distance < 5;
+    if (keepPlace && selectedFilters.price) {
+      keepPlace = place.price >= selectedFilters.price.length;
     }
-    if (selectedFilter.name === "price") {
-      return place.price > selectedFilter.value.length;
-      // switch (selectedFilter.value) {
-      //   case "$":
-      //     return place.price === 1;
-      //   case "$$":
-      //     return place.price === 2;
-      //   case "free":
-      //     return place.price === 0;
-      //   default:
-      //     break;
-      // }
-      // return place.price.includes(selectedFilter.value);
+    if (keepPlace && selectedFilters.category) {
+      keepPlace = place.category.includes(selectedFilters.category);
     }
-    if (selectedFilter.name === "category") {
-      return place.category === selectedFilter.value;
-      //   switch (selectedFilter.value) {
-      //     case "#museum":
-      //       return place.category === "#museum";
-      //     case "#garden":
-      //       return place.category === "#garden";
-      //     case "#architecture":
-      //       return place.category === "#architecture";
-      //     default:
-      //       break;
-      //   }
-      //   return place.category.includes(selectedFilter.value);
-    }
-    return true;
+    return keepPlace;
   });
+  // if (!selectedFilters) {
+  //   return true;
+  // }
+  // if (selectedFilters.name === "distance") {
+  //   let numbers = selectedFilters.value.match(/\d+/g).map(Number);
+  //   return place.distance <= numbers;
+  // }
+  // if (selectedFilters.name === "price") {
+  //   return place.price > selectedFilters.value.length;
+  // }
+  // if (selectedFilters.name === "category") {
+  //   return place.category === selectedFilters.value;
+  // }
+  // return true;
 
-  // const isFiltered = filterByKeys.find(filterKey => {
-  //     if (filterKey === "distace") {
-  //       return place.distance < props.filters.distance;
-  //     }
-  //     return isFiltered;
-  //   });
+  // const filteredPlaces = places.filter(place => {
+  //   if (selectedFilters.distance) {
+  //     return (place.distance = selectedFilters.distance);
+  //   }
+  //   if (selectedFilters.price) {
+  //     return place.price >= selectedFilters.price.length;
+  //   }
+  //   if (selectedFilters.category) {
+  //     return place.category.includes(selectedFilters.category);
+  //   }
 
   return (
     <section className="placeList">
@@ -79,3 +70,9 @@ export default PlaceList;
   return places.title;
 })
 */
+// const isFiltered = filterByKeys.find(filterKey => {
+//     if (filterKey === "distace") {
+//       return place.distance < props.filters.distance;
+//     }
+//     return isFiltered;
+//   });

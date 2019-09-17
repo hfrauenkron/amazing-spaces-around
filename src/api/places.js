@@ -5,7 +5,7 @@ export const places = [
     title: "Kolumba Museum",
     category: "#museum",
     distance: 5,
-    price: 1,
+    price: 2,
     description: "Beautiful chapel and reading room."
   },
   {
@@ -14,7 +14,7 @@ export const places = [
     title: "Flora Köln",
     category: "#garden",
     distance: 20,
-    price: 0,
+    price: 1,
     description: "Most beautiful park in cologne."
   },
   {
@@ -23,7 +23,7 @@ export const places = [
     title: "Skulpturengarten Köln",
     category: "#garden",
     distance: 15,
-    price: 0,
+    price: 1,
     description: "Park with curated art and sculptures."
   },
   {
@@ -32,7 +32,7 @@ export const places = [
     title: "Kölner Dom: Domdachführung",
     category: "#architecture",
     distance: 10,
-    price: 2,
+    price: 3,
     description: "Stunning architecture and view from the top."
   },
   {
@@ -41,7 +41,7 @@ export const places = [
     title: "Museum Ludwig",
     category: "#museum",
     distance: 10,
-    price: 2,
+    price: 3,
     description: "Stunning collection of modern art."
   },
   {
@@ -50,7 +50,7 @@ export const places = [
     title: "Kronleuchtersaal",
     category: "#architecture",
     distance: 20,
-    price: 1,
+    price: 2,
     description: "War era underground venue for events with chandelier."
   }
 ];

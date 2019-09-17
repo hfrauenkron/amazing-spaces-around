@@ -5,14 +5,13 @@ import FilterList from "./components/FilterList";
 import PlaceList from "./components/PlaceList";
 
 function App() {
-  const [filters, setFilters] = React.useState([null]);
+  const [filters, setFilters] = React.useState([]);
 
   function handleFilterChange(name, value) {
-    // console.log(`${name}: ${value}`);
-    setFilters({
-      name: name,
-      value: value
-    });
+    // create a copy of filters object
+    const newFilters = { ...filters };
+    newFilters[name] = value;
+    setFilters(newFilters);
   }
 
   /*function handleFilterChange(filterName, filterValue) {
@@ -23,15 +22,15 @@ function App() {
   }
   */
   return (
-    <body className="app">
+    <div className="app">
       <div className="wrapper">
         <Header />
         <main className="main">
           <FilterList onFilterChange={handleFilterChange} />
-          <PlaceList selectedFilter={filters} />
+          <PlaceList selectedFilters={filters} />
         </main>
       </div>
-    </body>
+    </div>
   );
 }
 

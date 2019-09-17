@@ -5,7 +5,7 @@ export const filters = [
   },
   {
     name: "price",
-    options: ["$", "$$", "free"]
+    options: ["$", "$$", "$$$"]
   },
   {
     name: "distance",
