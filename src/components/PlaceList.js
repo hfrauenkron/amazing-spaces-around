@@ -22,7 +22,7 @@ function PlaceList({ selectedFilters }) {
       }
     }
     if (keepPlace && selectedFilters.price) {
-      keepPlace = place.price >= selectedFilters.price.length;
+      keepPlace = place.price === selectedFilters.price.length;
     }
     if (keepPlace && selectedFilters.category) {
       keepPlace = place.category.includes(selectedFilters.category);
