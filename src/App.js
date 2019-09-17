@@ -5,12 +5,15 @@ import FilterList from "./components/FilterList";
 import PlaceList from "./components/PlaceList";
 
 function App() {
-  function handleFilterChange(name, value) {
-    console.log(name, value);
-    console.log(`${name}: ${value}`);
-  }
+  const [filters, setFilters] = React.useState([null]);
 
-  //const [filters, setFilters] = React.useState([]);
+  function handleFilterChange(name, value) {
+    // console.log(`${name}: ${value}`);
+    setFilters({
+      name: name,
+      value: value
+    });
+  }
 
   /*function handleFilterChange(filterName, filterValue) {
     const newFilters = Object.assign({}, filters);
@@ -25,7 +28,7 @@ function App() {
         <Header />
         <main className="main">
           <FilterList onFilterChange={handleFilterChange} />
-          <PlaceList />
+          <PlaceList selectedFilter={filters} />
         </main>
       </div>
     </body>

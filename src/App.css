@@ -21,10 +21,12 @@
 .header {
   z-index: 1;
   position: relative;
-  background: peachpuff;
+  background: rgb(235, 222, 247);
   height: 80px;
   width: 100%;
-  box-shadow: 0 2px 5px 0 rgb(129, 110, 94);
+  box-shadow: 0 2px 5px 0 rgb(165, 165, 167);
+  text-shadow: 2px 2px 2px white;
+  /* text-shadow: 3px 3px 3px white; */
 }
 
 .main {
@@ -54,27 +56,27 @@
   display: flex;
   justify-content: center;
   flex-flow: wrap;
-  background: rgb(175, 206, 181);
+  padding: 10px;
+  background: rgb(245, 225, 208);
   height: 100%;
   overflow: scroll;
-  box-shadow: 0 -2px 5px 0 rgb(118, 138, 123);
+  box-shadow: 0 -2px 5px 0 rgb(136, 116, 98);
 }
 
 .place {
   display: flex;
   flex-direction: row;
   background: beige;
-  height: 200px;
+  height: 250px;
   width: 420px;
-  margin-top: 30px;
-  margin-right: 10px;
+  margin: 10px;
   border: 2px solid black;
 }
 
 .placeText {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  overflow: scroll;
   width: 50%;
   justify-content: flex-start;
   padding: 5px;
