@@ -31,7 +31,10 @@ function App() {
       <div className="wrapper">
         <Header />
         <main className="main">
-          <FilterList onFilterChange={handleFilterChange} />
+          <FilterList
+            selectedFilters={filters}
+            onFilterChange={handleFilterChange}
+          />
           <PlaceList selectedFilters={filters} />
         </main>
       </div>
