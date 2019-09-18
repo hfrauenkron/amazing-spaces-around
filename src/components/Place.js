@@ -6,13 +6,14 @@ const PlaceDiv = styled.div`
   position: relative;
   display: flex;
   flex-direction: row;
-  background: beige;
+  background: ${props =>
+    props.odd ? "rgb(218, 204, 233)" : "rgb(240, 232, 248)"};
   height: 250px;
   width: 420px;
   margin: 10px;
   border: 5px solid rgb(216, 195, 176);
   &:hover {
-    background: red;
+    background: peachpuff;
   }
 `;
 
@@ -48,16 +49,12 @@ const PlaceFiltersDiv = styled.div`
 function Place(props) {
   return (
     <section>
-      <PlaceDiv className="place">
-        <Img
-          className="image"
-          alt="ImageOfPlace"
-          src={props.place.imgSrc}
-        ></Img>
-        <PlaceTextDiv className="placeText">
+      <PlaceDiv odd={props.odd}>
+        <Img alt="ImageOfPlace" src={props.place.imgSrc}></Img>
+        <PlaceTextDiv>
           <h3>{props.place.title}</h3>
           <p>{props.place.description}</p>
-          <PlaceFiltersDiv className="placeFilters">
+          <PlaceFiltersDiv>
             <span>
               <b>Category: </b>
               {props.place.category}
