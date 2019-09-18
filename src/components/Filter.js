@@ -1,7 +1,7 @@
 import React from "react";
 // import { filters } from "../api/filters";
 
-function Filter(props) {
+function Filter({ filter, onChange, selectedValue }) {
   // const [filter, setFilter] = React.useState(null);
 
   // function handleChange(event) {
@@ -10,10 +10,11 @@ function Filter(props) {
   return (
     <select
       className="filter"
-      onChange={event => props.onChange(props.filter.name, event.target.value)}
+      onChange={event => onChange(filter.name, event.target.value)}
+      value={selectedValue}
     >
-      <option value="">Select {props.filter.name}</option>
-      {props.filter.options.map(option => {
+      <option value="">Select {filter.name}</option>
+      {filter.options.map(option => {
         return (
           <option key={option} value={option}>
             {option}

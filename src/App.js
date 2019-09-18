@@ -5,7 +5,10 @@ import FilterList from "./components/FilterList";
 import PlaceList from "./components/PlaceList";
 
 function App() {
-  const [filters, setFilters] = React.useState([]);
+  const [filters, setFilters] = React.useState({
+    distance: "< 20min",
+    price: "$$"
+  });
 
   function handleFilterChange(name, value) {
     // create a copy of filters object
