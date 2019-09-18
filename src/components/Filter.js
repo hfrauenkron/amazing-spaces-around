@@ -7,14 +7,15 @@ const SelectFilter = styled.select`
   justify-content: space-between;
   height: 30px;
   width: 150px;
-  border: 5px solid rgb(224, 224, 183);
   margin: 10px;
+  /* border: 5px solid rgb(224, 224, 183); */
+  border: ${props =>
+    props.value ? "5px solid red" : "5px solid rgb(224, 224, 183)"};
 `;
 
 function Filter({ filter, onChange, selectedValue }) {
   return (
     <SelectFilter
-      className="filter"
       onChange={event => onChange(filter.name, event.target.value)}
       value={selectedValue}
     >
