@@ -10,7 +10,12 @@ function App() {
   function handleFilterChange(name, value) {
     // create a copy of filters object
     const newFilters = { ...filters };
-    newFilters[name] = value;
+    if (value) {
+      newFilters[name] = value;
+    } else {
+      delete newFilters[name];
+    }
+
     setFilters(newFilters);
   }
 
