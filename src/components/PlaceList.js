@@ -1,6 +1,19 @@
 import React from "react";
 import Place from "./Place";
 import { places } from "../api/places.js";
+import styled from "styled-components";
+
+const PlaceListSection = styled.section`
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  border: 5px solid rgb(216, 195, 176);
+  padding: 10px;
+  background: rgb(245, 225, 208);
+  height: 100%;
+  overflow: scroll;
+  box-shadow: 0 -2px 5px 0 rgb(136, 116, 98);
+`;
 
 function PlaceList({ selectedFilters }) {
   console.log(selectedFilters);
@@ -56,11 +69,11 @@ function PlaceList({ selectedFilters }) {
   //   }
 
   return (
-    <section className="placeList">
+    <PlaceListSection>
       {filteredPlaces.map(place => {
         return <Place key={place.title} place={place} />;
       })}
-    </section>
+    </PlaceListSection>
   );
 }
 

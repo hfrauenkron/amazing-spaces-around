@@ -1,14 +1,19 @@
 import React from "react";
+import styled from "styled-components";
 // import { filters } from "../api/filters";
 
-function Filter({ filter, onChange, selectedValue }) {
-  // const [filter, setFilter] = React.useState(null);
+const SelectFilter = styled.select`
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  width: 150px;
+  border: 5px solid rgb(224, 224, 183);
+  margin: 10px;
+`;
 
-  // function handleChange(event) {
-  //   props.onChange(props.filter.name, event.target.value);
-  // }
+function Filter({ filter, onChange, selectedValue }) {
   return (
-    <select
+    <SelectFilter
       className="filter"
       onChange={event => onChange(filter.name, event.target.value)}
       value={selectedValue}
@@ -21,18 +26,8 @@ function Filter({ filter, onChange, selectedValue }) {
           </option>
         );
       })}
-    </select>
+    </SelectFilter>
   );
 }
 
 export default Filter;
-
-// <i class="fa fa-caret-down"></i>
-/*
-      <optgroup label={props.filter.name}>
-        <option>
-                </option>
-      </optgroup>
-
-            <option disabled value={props.filter.name}></option>
-      */
