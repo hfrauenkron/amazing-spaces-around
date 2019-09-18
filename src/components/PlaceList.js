@@ -42,36 +42,11 @@ function PlaceList({ selectedFilters }) {
     }
     return keepPlace;
   });
-  // if (!selectedFilters) {
-  //   return true;
-  // }
-  // if (selectedFilters.name === "distance") {
-  //   let numbers = selectedFilters.value.match(/\d+/g).map(Number);
-  //   return place.distance <= numbers;
-  // }
-  // if (selectedFilters.name === "price") {
-  //   return place.price > selectedFilters.value.length;
-  // }
-  // if (selectedFilters.name === "category") {
-  //   return place.category === selectedFilters.value;
-  // }
-  // return true;
-
-  // const filteredPlaces = places.filter(place => {
-  //   if (selectedFilters.distance) {
-  //     return (place.distance = selectedFilters.distance);
-  //   }
-  //   if (selectedFilters.price) {
-  //     return place.price >= selectedFilters.price.length;
-  //   }
-  //   if (selectedFilters.category) {
-  //     return place.category.includes(selectedFilters.category);
-  //   }
 
   return (
     <PlaceListSection>
-      {filteredPlaces.map(place => {
-        return <Place key={place.title} place={place} />;
+      {filteredPlaces.map((place, index) => {
+        return <Place key={place.title} odd={index % 2} place={place} />;
       })}
     </PlaceListSection>
   );
@@ -89,3 +64,29 @@ export default PlaceList;
 //     }
 //     return isFiltered;
 //   });
+
+// if (!selectedFilters) {
+//   return true;
+// }
+// if (selectedFilters.name === "distance") {
+//   let numbers = selectedFilters.value.match(/\d+/g).map(Number);
+//   return place.distance <= numbers;
+// }
+// if (selectedFilters.name === "price") {
+//   return place.price > selectedFilters.value.length;
+// }
+// if (selectedFilters.name === "category") {
+//   return place.category === selectedFilters.value;
+// }
+// return true;
+
+// const filteredPlaces = places.filter(place => {
+//   if (selectedFilters.distance) {
+//     return (place.distance = selectedFilters.distance);
+//   }
+//   if (selectedFilters.price) {
+//     return place.price >= selectedFilters.price.length;
+//   }
+//   if (selectedFilters.category) {
+//     return place.category.includes(selectedFilters.category);
+//   }
