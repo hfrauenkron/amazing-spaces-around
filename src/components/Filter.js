@@ -1,33 +1,34 @@
 import React from "react";
+import styled from "styled-components";
 // import { filters } from "../api/filters";
 
-function Filter(props) {
-  // const [filter, setFilter] = React.useState(null);
+const SelectFilter = styled.select`
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  width: 150px;
+  margin: 10px;
+  /* border: 5px solid rgb(224, 224, 183); */
+  border: ${props =>
+    props.value ? "5px solid red" : "5px solid rgb(224, 224, 183)"};
+`;
 
-  // function handleChange(event) {
-  //   props.onChange(props.filter.name, event.target.value);
-  // }
+function Filter({ filter, onChange, selectedValue }) {
   return (
-    <select
-      className="filter"
-      onChange={event => props.onChange(props.filter.name, event.target.value)}
+    <SelectFilter
+      onChange={event => onChange(filter.name, event.target.value)}
+      value={selectedValue}
     >
-      <option defaultValue>{props.filter.name}</option>
-      {props.filter.options.map(option => {
-        return <option key={option}>{option}</option>;
+      <option value="">Select {filter.name}</option>
+      {filter.options.map(option => {
+        return (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        );
       })}
-    </select>
+    </SelectFilter>
   );
 }
 
 export default Filter;
-
-// <i class="fa fa-caret-down"></i>
-/*
-      <optgroup label={props.filter.name}>
-        <option>
-                </option>
-      </optgroup>
-
-            <option disabled value={props.filter.name}></option>
-      */

@@ -1,14 +1,14 @@
 export const filters = [
   {
-    name: "Category",
-    options: ["#museum", "#garden"]
+    name: "category",
+    options: ["#museum", "#garden", "#architecture"]
   },
   {
-    name: "Price",
-    options: ["$", "$$", "$$$", "free"]
+    name: "price",
+    options: ["$", "$$", "$$$"]
   },
   {
-    name: "Distance",
-    options: ["0-10min", "10-20min"]
+    name: "distance",
+    options: ["< 5min", "< 10min", "< 20min"]
   }
 ];
