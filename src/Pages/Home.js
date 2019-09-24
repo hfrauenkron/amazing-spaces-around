@@ -24,8 +24,12 @@ const Main = styled.main`
   height: 100%;
 `;
 
-export default function Home() {
+export default function Home({ history, location }) {
+  const params = new URLSearchParams(location.search);
   const [filters, setFilters] = React.useState({
+    category: params.get("category") || "",
+    distance: params.get("distance") || "",
+    price: params.get("price") || ""
     // distance: "< 20min",
     // price: "$$"
   });
@@ -40,6 +44,11 @@ export default function Home() {
     }
 
     setFilters(newFilters);
+    console.log(newFilters);
+    history.push(
+      // (`${location.pathname}?${params.toString()}`);
+      `/?category=${newFilters.category}&?price=${newFilters.price}&?distance=${newFilters.distance}`
+    );
   }
 
   /*function handleFilterChange(filterName, filterValue) {

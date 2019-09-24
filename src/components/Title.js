@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
   z-index: 1;
   position: relative;
   background: rgb(240, 232, 248);
@@ -13,10 +18,19 @@ const Header = styled.header`
   text-shadow: 2px 2px 2px white;
 `;
 
+const NavUl = styled.ul`
+  list-style-type: none;
+`;
+
 function Title() {
   return (
     <Header>
       <h2>amazing SPACES around</h2>
+      <NavUl>
+        <Link to="/new">
+          <li>NEW</li>
+        </Link>
+      </NavUl>
     </Header>
   );
 }
