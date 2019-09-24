@@ -5,14 +5,14 @@ import styled from "styled-components";
 
 const PlaceListSection = styled.section`
   display: flex;
+  width: 100%;
+  height: 100vh;
   justify-content: center;
   flex-flow: wrap;
-  border: 5px solid rgb(216, 195, 176);
-  padding: 10px;
-  background: rgb(245, 225, 208);
-  height: 100%;
+  /* border: 5px solid rgb(216, 195, 176); */
+  background-color: ${props => props.theme.card};
+  border-radius: 10px;
   overflow: scroll;
-  box-shadow: 0 -2px 5px 0 rgb(136, 116, 98);
 `;
 
 function PlaceList({ selectedFilters }) {

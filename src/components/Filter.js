@@ -8,9 +8,10 @@ const SelectFilter = styled.select`
   height: 30px;
   width: 150px;
   margin: 10px;
-  /* border: 5px solid rgb(224, 224, 183); */
   border: ${props =>
-    props.value ? "5px solid red" : "5px solid rgb(224, 224, 183)"};
+    props.value
+      ? "5px solid rgb(253, 249, 13)"
+      : "5px solid rgb(224, 224, 183)"};
 `;
 
 function Filter({ filter, onChange, selectedValue }) {

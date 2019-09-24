@@ -4,7 +4,7 @@ import { filters } from "../api/filters";
 import styled from "styled-components";
 
 const FilterSection = styled.section`
-  background: beige;
+  background: transparent;
   display: flex;
   justify-content: space-around;
   align-items: center;

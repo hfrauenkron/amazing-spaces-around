@@ -1,78 +1,33 @@
 import React from "react";
-import Title from "./components/Title";
-import FilterList from "./components/FilterList";
-import PlaceList from "./components/PlaceList";
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+import GlobalStyles from "./GlobalStyles.js";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import New from "./Pages/New";
+import defaultTheme from "./themes/default.js";
+import darkTheme from "./themes/dark.js";
 
-const GlobalStyle = createGlobalStyle`
-*{
-box-sizing: border-box;
-}`;
-
-const AppDiv = styled.div`
-  display: flex;
-  justify-content: center;
+const Container = styled.div`
+  width: 100vw;
   height: 100vh;
-`;
-
-const WrapperDiv = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: center;
-  width: 90%;
-  height: 90%;
-`;
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: ${props => props.theme.main};
 `;
 
 function App() {
-  const [filters, setFilters] = React.useState({
-    distance: "< 20min",
-    price: "$$"
-  });
-
-  function handleFilterChange(name, value) {
-    // create a copy of filters object
-    const newFilters = { ...filters };
-    if (value) {
-      newFilters[name] = value;
-    } else {
-      delete newFilters[name];
-    }
-
-    setFilters(newFilters);
-  }
-
-  /*function handleFilterChange(filterName, filterValue) {
-    const newFilters = Object.assign({}, filters);
-    newsFilters[filterName] = filterValue;
-    // setFilter(event.target.value);
-  
-  }
-  */
   return (
-    <>
-      <GlobalStyle />
-      <AppDiv>
-        <WrapperDiv>
-          <Title />
-          <Main>
-            <FilterList
-              selectedFilters={filters}
-              onFilterChange={handleFilterChange}
-            />
-            <PlaceList selectedFilters={filters} />
-          </Main>
-        </WrapperDiv>
-      </AppDiv>
-    </>
+    <ThemeProvider theme={defaultTheme}>
+      <Container>
+        <GlobalStyles />
+        <Router>
+          <Route path="/" exact component={Home} />
+          <Route path="/new" exact component={New} />
+        </Router>
+      </Container>
+    </ThemeProvider>
   );
 }
-
 export default App;
-
-//           <FilterList onFilterChange={handleFilterChange} />
