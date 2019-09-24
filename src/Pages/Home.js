@@ -8,21 +8,22 @@ const AppDiv = styled.div`
   display: flex;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
 `;
 
 const WrapperDiv = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 90%;
-  height: 90%;
+  width: 90vh;
+  height: 100vh;
 `;
 
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-`;
+// const Main = styled.main`
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+// `;
 
 export default function Home({ history, location }) {
   const params = new URLSearchParams(location.search);
@@ -63,13 +64,13 @@ export default function Home({ history, location }) {
       <AppDiv>
         <WrapperDiv>
           <Title />
-          <Main>
+          <main>
             <FilterList
               selectedFilters={filters}
               onFilterChange={handleFilterChange}
             />
             <PlaceList selectedFilters={filters} />
-          </Main>
+          </main>
         </WrapperDiv>
       </AppDiv>
     </>
