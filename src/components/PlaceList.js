@@ -7,9 +7,9 @@ const PlaceListSection = styled.section`
   display: flex;
   justify-content: center;
   flex-flow: wrap;
-  border: 5px solid rgb(216, 195, 176);
-  padding: 10px;
-  background: rgb(245, 225, 208);
+  /* border: 5px solid rgb(216, 195, 176); */
+  background: rgb(254, 252, 128);
+  border-radius: 10px;
   height: 100%;
   overflow: scroll;
   box-shadow: 0 -2px 5px 0 rgb(136, 116, 98);
