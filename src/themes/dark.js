@@ -1,9 +1,9 @@
 const darkTheme = {
-  background: "#161542",
-  main: "#27425e",
+  background: "#0d1445",
+  main: "#282d4d",
   shadow: "0 -2px 5px 0 black",
   color: "#ffffff",
-  card: "#4d4b81"
+  card: "#0d1445"
 };
 
 export default darkTheme;

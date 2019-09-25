@@ -1,20 +1,25 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
-const BadgeDiv = styled.div`
-  display: inline-block;
+const BadgeDiv = styled.span`
   border-radius: 5px;
   padding: 3px 10px;
   border: solid 1px rgb(84, 127, 179);
   ${props =>
     props.active
-      ? ("background: rgb(84, 127, 179)", "color: rgb(255, 255, 255)")
-      : ("background: rgb(255, 255, 255)", "color: rgb(84, 127, 179)")};
+      ? css`
+          background: rgb(84, 127, 179);
+          color: rgb(255, 255, 255);
+        `
+      : css`
+          background: rgb(255, 255, 255);
+          color: rgb(84, 127, 179);
+        `}
   margin: 5px;
 `;
 
-export default function Badge({ active = true, children }) {
+export default function Badge({ active, children }) {
   return <BadgeDiv active={active}>{children}</BadgeDiv>;
 }
 

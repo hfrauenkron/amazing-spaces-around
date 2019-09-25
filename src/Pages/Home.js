@@ -25,7 +25,7 @@ const WrapperDiv = styled.div`
 //   height: 100%;
 // `;
 
-export default function Home({ history, location }) {
+export default function Home({ history, location, toggleTheme }) {
   const params = new URLSearchParams(location.search);
   const [filters, setFilters] = React.useState({
     category: params.get("category") || "",
@@ -63,7 +63,7 @@ export default function Home({ history, location }) {
     <>
       <AppDiv>
         <WrapperDiv>
-          <Title />
+          <Title toggleTheme={toggleTheme} />
           <main>
             <FilterList
               selectedFilters={filters}

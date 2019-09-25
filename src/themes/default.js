@@ -3,7 +3,7 @@ const defaultTheme = {
   main: "#547FB3",
   shadow: "0 -2px 5px 0 black",
   color: "#FFFFFF",
-  card: "#f8fc03"
+  card: "#FE6F61"
 };
 
 export default defaultTheme;

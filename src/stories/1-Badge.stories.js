@@ -5,6 +5,6 @@ export default {
   title: "Badge"
 };
 
-export const Active = () => <Badge>Asiatisch</Badge>;
+export const Active = () => <Badge active={true}>Asiatisch</Badge>;
 
 export const Inactive = () => <Badge active={false}>Deutsch</Badge>;
