@@ -8,12 +8,11 @@ import styled from "styled-components";
 const PlaceDiv = styled.div`
   display: flex;
   flex-direction: row;
-  background: ${props =>
-    props.odd ? "rgb(218, 204, 233)" : "rgb(240, 232, 248)"};
+  background: ${props => (props.odd ? "#547FB3" : "#FFFFFF")};
   height: 250px;
   width: 420px;
   margin: 20px;
-  border: 5px solid white;
+  /* border: 5px solid white; */
   /* border: ${props =>
     props.odd
       ? "5px solid rgb(240, 232, 248)"

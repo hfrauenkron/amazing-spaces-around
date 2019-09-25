@@ -9,7 +9,7 @@ import darkTheme from "./themes/dark.js";
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,17 +17,27 @@ const Container = styled.div`
   background: ${props => props.theme.main};
 `;
 
-function App() {
+export default function App() {
+  const [darkmode, setDarkmode] = React.useState(false);
+
+  function handleToggleTheme() {
+    setDarkmode(!darkmode);
+  }
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={darkmode ? darkTheme : defaultTheme}>
       <Container>
         <GlobalStyles />
         <Router>
-          <Route path="/" exact component={Home} />
+          <Route
+            path="/"
+            exact
+            component={props => (
+              <Home toggleTheme={handleToggleTheme} {...props} />
+            )}
+          />
           <Route path="/new" exact component={New} />
         </Router>
       </Container>
     </ThemeProvider>
   );
 }
-export default App;
